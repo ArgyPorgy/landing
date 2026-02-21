@@ -24,10 +24,6 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="flex-1 flex flex-col"
         >
-          <div className="mb-8">
-            <img src={logoImage} alt="Isha Logo" className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300" />
-          </div>
-
           <div className="flex-1 flex flex-col justify-center">
             <div className="relative inline-block mb-8 group w-48 h-48 md:w-64 md:h-64">
               <div className="absolute inset-0 bg-primary translate-x-3 translate-y-3 transition-transform group-hover:translate-x-4 group-hover:translate-y-4 duration-300"></div>

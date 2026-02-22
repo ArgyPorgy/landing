@@ -16,27 +16,16 @@ export function metaImagesPlugin(): Plugin {
         return html;
       }
 
-      // Check if opengraph image exists in public directory
+      // Check if isha.png exists in public directory
       const publicDir = path.resolve(process.cwd(), 'client', 'public');
-      const opengraphPngPath = path.join(publicDir, 'opengraph.png');
-      const opengraphJpgPath = path.join(publicDir, 'opengraph.jpg');
-      const opengraphJpegPath = path.join(publicDir, 'opengraph.jpeg');
+      const ishaImagePath = path.join(publicDir, 'isha.png');
 
-      let imageExt: string | null = null;
-      if (fs.existsSync(opengraphPngPath)) {
-        imageExt = 'png';
-      } else if (fs.existsSync(opengraphJpgPath)) {
-        imageExt = 'jpg';
-      } else if (fs.existsSync(opengraphJpegPath)) {
-        imageExt = 'jpeg';
-      }
-
-      if (!imageExt) {
-        log('[meta-images] OpenGraph image not found, skipping meta tag updates');
+      if (!fs.existsSync(ishaImagePath)) {
+        log('[meta-images] isha.png not found, skipping meta tag updates');
         return html;
       }
 
-      const imageUrl = `${baseUrl}/opengraph.${imageExt}`;
+      const imageUrl = `${baseUrl}/isha.png`;
 
       log('[meta-images] updating meta image tags to:', imageUrl);
 

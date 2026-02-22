@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowUpRight, Github, Twitter, Mail } from "lucide-react";
+import { ExternalLink, ArrowUpRight, Mail } from "lucide-react";
 import profileImage from "@assets/image_1771661639886.png";
 import logoImage from "@assets/logo.png";
 import { Button } from "@/components/ui/button";
+
+// X (Twitter) Logo Component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 export default function Home() {
   return (
@@ -41,20 +53,18 @@ export default function Home() {
               18 y/o builder. Crafting digital experiences.
             </p>
 
+            <div className="mb-8">
+              <a href="https://x.com/ishaonchain" target="_blank" rel="noopener noreferrer" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors inline-block">
+                <XIcon className="w-5 h-5" />
+              </a>
+            </div>
+
             <div className="space-y-4 mt-auto pt-12">
-              <a href="mailto:hello@example.com" className="flex items-center gap-3 text-lg hover:text-primary transition-colors w-fit group">
+              <a href="mailto:rexriot9@gmail.com" className="flex items-center gap-3 text-lg hover:text-primary transition-colors w-fit group">
                 <Mail className="w-5 h-5" />
                 <span>Let's talk</span>
                 <ArrowUpRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
               </a>
-              <div className="flex gap-4">
-                <a href="#" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-              </div>
             </div>
           </div>
         </motion.div>
@@ -78,10 +88,28 @@ export default function Home() {
             <p className="text-xl leading-relaxed text-muted-foreground mb-6">
               I'm <span className="text-foreground font-bold">Isha</span>. I build apps because I love turning ideas into reality. Currently spending my days coding, designing, and exploring what's possible on the web.
             </p>
-            <div className="p-6 border-l-2 border-primary bg-card/50">
+            <div className="mb-6 p-6 border-l-2 border-primary bg-card/50">
               <p className="text-lg m-0 font-bold">
                 Next chapter: Planning and launching my own App Studio.
               </p>
+            </div>
+            <div className="flex flex-wrap gap-4 items-center">
+              <div className="flex items-center gap-2">
+                <img 
+                  src="https://pbs.twimg.com/profile_images/1770009360011333632/H5BFG6-M_400x400.jpg" 
+                  alt="ETHGlobal Winner 2x" 
+                  className="w-12 h-12 rounded-full object-cover border-2 border-primary"
+                />
+                <span className="text-sm uppercase tracking-widest font-bold text-primary">ETHGlobal Winner 2x</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <img 
+                  src="https://pbs.twimg.com/profile_images/1184141979493568515/NMa0vlIb_400x400.jpg" 
+                  alt="MLH Winner" 
+                  className="w-12 h-12 rounded-full object-cover border-2 border-primary"
+                />
+                <span className="text-sm uppercase tracking-widest font-bold text-primary">MLH Winner</span>
+              </div>
             </div>
           </div>
         </motion.section>
@@ -112,10 +140,16 @@ export default function Home() {
                 link: "#"
               },
               {
-                title: "Design System",
-                desc: "A brutalist-inspired open source UI kit for developers who hate boring websites.",
+                title: "SophistAI",
+                desc: "Your Personal Syllabus Navigator. Visualize Your Syllabus, Conquer Your Coursework.",
                 status: "Live",
-                link: "#"
+                link: "https://sophistai.app/"
+              },
+              {
+                title: "BlockOff",
+                desc: "Sign Ethereum Transactions Offline. Secure Bluetooth and QR-based Ethereum signing. Keep your private keys offline while staying connected to the network.",
+                status: "Live",
+                link: "https://block-off.vercel.app/"
               }
             ].map((project, i) => (
               <div 
@@ -136,7 +170,7 @@ export default function Home() {
                   className="w-fit rounded-none border-border hover:bg-primary hover:text-primary-foreground hover:border-primary uppercase tracking-widest text-xs"
                   asChild
                 >
-                  <a href={project.link}>View Project</a>
+                  <a href={project.link} target={project.link.startsWith('http') ? '_blank' : undefined} rel={project.link.startsWith('http') ? 'noopener noreferrer' : undefined}>View Project</a>
                 </Button>
               </div>
             ))}
@@ -160,8 +194,11 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="bg-background text-foreground hover:bg-foreground hover:text-background rounded-none text-lg h-14 px-8 border border-transparent"
+                asChild
               >
-                Initiate Contact
+                <a href="https://x.com/ishaonchain" target="_blank" rel="noopener noreferrer">
+                  Initiate Contact
+                </a>
               </Button>
             </div>
             
@@ -172,7 +209,7 @@ export default function Home() {
 
         <footer className="pt-12 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm uppercase tracking-widest">
           <p>© {new Date().getFullYear()} ISHA. ALL RIGHTS RESERVED.</p>
-          <p>BUILT WITH PASSION.</p>
+          <p>BUILT WITH ❤️ by me.</p>
         </footer>
 
       </div>

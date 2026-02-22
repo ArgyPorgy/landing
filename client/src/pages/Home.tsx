@@ -16,6 +16,30 @@ const XIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+// Instagram Icon Component
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+  </svg>
+);
+
+// Snapchat Icon Component
+const SnapchatIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12.017 0C8.396 0 5.29 1.155 2.554 3.43c-.12.096-.12.24 0 .336C5.29 6.141 8.396 7.296 12.017 7.296c3.62 0 6.727-1.155 9.463-3.53.12-.096.12-.24 0-.336C18.744 1.155 15.637 0 12.017 0zm0 3.67c-1.883 0-3.43 1.547-3.43 3.43 0 1.883 1.547 3.43 3.43 3.43 1.883 0 3.43-1.547 3.43-3.43 0-1.883-1.547-3.43-3.43-3.43zm-6.86 6.86c-.12 0-.24.048-.336.144-.72.72-1.68 1.2-2.76 1.488-.12.048-.192.144-.192.288 0 .096.048.192.096.288.048.048.144.096.24.096.048 0 .096 0 .144-.048 1.2-.336 2.256-.864 3.024-1.632.048-.048.096-.096.144-.192 0-.048 0-.096-.048-.144 0-.048-.048-.096-.048-.144 0-.048.048-.096.048-.144zm13.72 0c0 .048.048.096.048.144 0 .048 0 .096.048.144.048.048.096.096.144.192.768.768 1.824 1.296 3.024 1.632.048.048.096.048.144.048.096 0 .192-.048.24-.096.048-.096.096-.192.096-.288 0-.144-.072-.24-.192-.288-1.08-.288-2.04-.768-2.76-1.488-.096-.096-.216-.144-.336-.144zm-6.86 2.4c-1.68 0-3.168.768-4.176 1.968-.48.576-.816 1.248-1.008 1.968-.048.192-.048.384 0 .576.048.192.144.384.288.528.144.144.336.24.528.288.192.048.384.048.576 0 .72-.192 1.392-.528 1.968-1.008 1.2-1.008 1.968-2.496 1.968-4.176 0-.192 0-.384-.048-.576-.048-.192-.144-.384-.288-.528-.144-.144-.336-.24-.528-.288-.192-.048-.384-.048-.576 0-.72.192-1.392.528-1.968 1.008z" />
+  </svg>
+);
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col md:flex-row overflow-hidden relative selection:bg-primary selection:text-primary-foreground">
@@ -53,9 +77,15 @@ export default function Home() {
               18 y/o builder. Crafting digital experiences.
             </p>
 
-            <div className="mb-8">
-              <a href="https://x.com/ishaonchain" target="_blank" rel="noopener noreferrer" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors inline-block">
+            <div className="mb-8 flex gap-4">
+              <a href="https://x.com/ishaonchain" target="_blank" rel="noopener noreferrer" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
                 <XIcon className="w-5 h-5" />
+              </a>
+              <a href="https://www.instagram.com/isha.lovesmatcha" target="_blank" rel="noopener noreferrer" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
+                <InstagramIcon className="w-5 h-5" />
+              </a>
+              <a href="https://www.snapchat.com/@isha.aroora" target="_blank" rel="noopener noreferrer" className="p-3 border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
+                <SnapchatIcon className="w-5 h-5" />
               </a>
             </div>
 
